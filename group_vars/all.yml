@@ -2,3 +2,19 @@
  
 apache_listen_ip: "*"
 apache_listen_port: 80
+
+mysql_root_password: nbusr123
+
+mysql_databases:
+  - name: example_db
+    state: present
+
+mysql_users:
+  - name: example_user
+    host: "%"
+    password: foo-and-bar
+    priv: "example_db.*:ALL"
+  - name: example_user
+    host: "localhost"
+    password: foo-and-bar
+    priv: "example_db.*:ALL"
