@@ -1,0 +1,4 @@
+- name: Setup NextCloud
+  hosts: all
+  roles:
+    - role: geerlingguy.apache
