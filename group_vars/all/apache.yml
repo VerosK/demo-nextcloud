@@ -1,1 +1,2 @@
-:sp:n€kd€ku€kl:x:x
+apache_listen_ip: "*"
+apache_listen_port: 80
