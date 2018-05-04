@@ -1,0 +1,4 @@
+# group_vars/all.yml
+ 
+apache_listen_ip: "*"
+apache_listen_port: 80
