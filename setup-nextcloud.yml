@@ -6,3 +6,5 @@
       tags: mysql
     - role: geerlingguy.php
       tags: php
+    - role: nextcloud
+      tags: nextcloud

@@ -1,0 +1,4 @@
+nextcloud_path: /opt/nextcloud
+nextcloud_user: apache
+nextcloud_tmp_path: '{{ nextcloud_path }}/nextcloud.zip'
+nextcloud_source: https://download.nextcloud.com/server/releases/nextcloud-13.0.2.zip

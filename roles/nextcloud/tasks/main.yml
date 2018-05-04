@@ -1,0 +1,18 @@
+- name: Create nextcloud setup path
+  file: 
+    dest: '{{ nextcloud_path }}'
+    state: directory
+
+- name: Check existence of index.php
+  file: 
+    dest: '{{ nextcloud_path }}/index.php'
+    state: file
+  ignore_errors: yes
+  register: _has_index
+
+- debug:
+    msg: '{{ _has_index }}'
+
+- include: download-nextcloud.yml
+  when: _has_index.failed
+    
