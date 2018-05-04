@@ -1,3 +1,4 @@
+nextcloud_path: '/opt/nextcloud'
 
 nextcloud_db_name: nextcloud
 nextcloud_db_user: nextcloud

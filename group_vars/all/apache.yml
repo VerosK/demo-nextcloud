@@ -1,2 +1,8 @@
 apache_listen_ip: "*"
 apache_listen_port: 80
+
+
+apache_vhosts:
+  - servername: "{{ ansible_fqdn }}"
+    documentroot: "{{ nextcloud_path }}/nextcloud"
+   
