@@ -1,0 +1,6 @@
+
+- name: Download and unpack
+  unarchive:
+     src: '{{ nextcloud_source }}'
+     dest: '{{ nextcloud_path }}'
+     remote_src: yes

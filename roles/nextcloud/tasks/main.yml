@@ -5,14 +5,12 @@
 
 - name: Check existence of index.php
   file: 
-    dest: '{{ nextcloud_path }}/index.php'
+    dest: '{{ nextcloud_path }}/nextcloud/index.php'
     state: file
-  ignore_errors: yes
   register: _has_index
-
-- debug:
-    msg: '{{ _has_index }}'
+  failed_when: false
+  check_mode: yes
 
 - include: download-nextcloud.yml
-  when: _has_index.failed
+  when: _has_index.state == 'absent'
     
