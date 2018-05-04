@@ -1,14 +1,5 @@
-# group_vars/all.yml
- 
-apache_listen_ip: "*"
-apache_listen_port: 80
 
 mysql_root_password: nbusr123
-
-
-nextcloud_db_name: nextcloud
-nextcloud_db_user: nextcloud
-nextcloud_db_password: nextcloud123
 
 mysql_databases:
   - name: '{{ nextcloud_db_name }}'
@@ -17,9 +8,9 @@ mysql_databases:
 mysql_users:
   - name: "{{ nextcloud_db_user }}"
     host: "%"
-    password: foo-and-bar
+    password: '{{ nextcloud_db_password }}'
     priv: "{{ nextcloud_db_name }}.*:ALL"
   - name: "{{ nextcloud_db_user }}"
     host: "localhost"
-    password: foo-and-bar
+    password: '{{ nextcloud_db_password }}'
     priv: "{{ nextcloud_db_name }}.*:ALL"
