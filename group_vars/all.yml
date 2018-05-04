@@ -5,16 +5,21 @@ apache_listen_port: 80
 
 mysql_root_password: nbusr123
 
+
+nextcloud_db_name: nextcloud
+nextcloud_db_user: nextcloud
+nextcloud_db_password: nextcloud123
+
 mysql_databases:
-  - name: example_db
+  - name: '{{ nextcloud_db_name }}'
     state: present
 
 mysql_users:
-  - name: example_user
+  - name: "{{ nextcloud_db_user }}"
     host: "%"
     password: foo-and-bar
-    priv: "example_db.*:ALL"
-  - name: example_user
+    priv: "{{ nextcloud_db_name }}.*:ALL"
+  - name: "{{ nextcloud_db_user }}"
     host: "localhost"
     password: foo-and-bar
-    priv: "example_db.*:ALL"
+    priv: "{{ nextcloud_db_name }}.*:ALL"
