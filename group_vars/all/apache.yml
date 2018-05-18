@@ -5,4 +5,7 @@ apache_listen_port: 80
 apache_vhosts:
   - servername: "{{ ansible_fqdn }}"
     documentroot: "{{ nextcloud_path }}/nextcloud"
+    extra_parameters: |
+         ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000/{{ nextcloud_path }}/nextcloud/$1
+
    
